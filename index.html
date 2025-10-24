@@ -17,8 +17,6 @@
             align-items: center;
             min-height: 100vh;
         }
-
-        /* --- Main Container --- */
         .container {
             max-width: 800px;
             width: 90%;
@@ -29,8 +27,6 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
-        /* --- Header Section --- */
         header {
             display: flex;
             align-items: center;
@@ -52,8 +48,6 @@
             margin: 0;
             color: #1a237e;
         }
-
-        /* --- Download Button --- */
         .download-button {
             display: inline-block;
             background-color: #28a745;
@@ -70,8 +64,6 @@
             background-color: #218838;
             transform: scale(1.05);
         }
-
-        /* --- Section Titles --- */
         h2 {
             font-size: 1.8rem;
             color: #3f51b5;
@@ -82,25 +74,23 @@
             padding-bottom: 5px;
         }
 
-        /* --- Screenshot Gallery --- */
+        /* --- *** পরিবর্তন এখানে *** --- */
         .screenshot-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;       /* ছবিগুলোকে পাশাপাশি আনে */
+            overflow-x: auto;    /* যদি জায়গা না হয়, তবে পাশাপাশি স্ক্রল করার ব্যবস্থা করে */
+            gap: 15px;           /* ছবিগুলোর মধ্যে ফাঁকা জায়গা */
             margin-top: 20px;
+            padding-bottom: 15px; /* স্ক্রলবারের জন্য সামান্য জায়গা */
         }
         .screenshot-gallery img {
-            width: 100%;
+            width: auto;         /* ছবির স্বাভাবিক প্রস্থ ব্যবহার করবে */
+            height: 350px;       /* প্রতিটি স্ক্রিনশটের একটি নির্দিষ্ট উচ্চতা দেওয়া হয়েছে */
             border-radius: 8px;
             border: 1px solid #ddd;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;      /* ছবিগুলো যেন সংকুচিত না হয়ে যায় */
         }
-        .screenshot-gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-
-        /* --- Instructions Section --- */
+        /* --- *** পরিবর্তন শেষ *** --- */
+        
         .instructions {
             text-align: left;
             margin-top: 20px;
@@ -113,47 +103,33 @@
         .instructions li {
             margin-bottom: 10px;
         }
-
-        /* --- Footer --- */
         footer {
             margin-top: 40px;
             font-size: 0.9rem;
             color: #888;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-
-        <!-- অ্যাপ আইকন এবং নাম -->
         <header>
-            <!-- !! গুরুত্বপূর্ণ: আপনার অ্যাপের আইকন ফাইলটির নাম "app-icon.png" দিয়ে এখানে রাখুন !! -->
             <img src="app-icon.png" alt="Over Time App Icon" class="app-icon">
             <h1 class="app-title">Over Time App</h1>
         </header>
-
         <main>
-            <!-- ডাউনলোড বাটন -->
-            <!-- !! এখানে আপনার দেওয়া APK ডাউনলোড লিঙ্কটি বসানো হয়েছে !! -->
             <a href="https://github.com/Alamin4545u/Slaryapp/releases/download/V3/Over.Time.4.apk" class="download-button" download>
                 এখনি ডাউনলোড করুন
             </a>
-
-            <!-- স্ক্রিনশট সেকশন -->
             <section>
                 <h2>অ্যাপটির স্ক্রিনশট</h2>
                 <div class="screenshot-gallery">
-                    <!-- !! গুরুত্বপূর্ণ: আপনার স্ক্রিনশট ফাইলগুলোর নাম "screenshot1.png", "screenshot2.png" ইত্যাদি দিয়ে এখানে রাখুন !! -->
                     <img src="screenshot1.png" alt="App Screenshot 1">
                     <img src="screenshot2.png" alt="App Screenshot 2">
                     <img src="screenshot3.png" alt="App Screenshot 3">
                     <img src="screenshot4.png" alt="App Screenshot 4">
                 </div>
             </section>
-
-            <!-- নির্দেশনা সেকশন -->
             <section>
                 <h2>নির্দেশনা ও বিবরণ</h2>
                 <div class="instructions">
@@ -168,12 +144,9 @@
                 </div>
             </section>
         </main>
-
-        <!-- ফুটার -->
         <footer>
             <p>&copy; 2025 Over Time App. All rights reserved.</p>
         </footer>
-
     </div>
 
 </body>
